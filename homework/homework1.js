@@ -1,6 +1,7 @@
 function _getUrl() {
     "use strict";
     //Here we can generate any url if we need for tests
+    //....
     var url = location.hash.replace(/^#/, '');
     //....
     return url;
@@ -12,7 +13,7 @@ function _loadURL(url, search, container) {
     loadURL(url + search, container);
 }
 
-function _updatePage(hash) {
+function _updateHash(hash) {
     "use strict";
     //Here we can provide test logic
     //....
@@ -45,7 +46,7 @@ function checkURL() {
         var $this = $('nav > ul > li:first-child > a[href!="#"]');
 
         //update hash
-        _updatePage($this.attr('href'));
+        _updateHash($this.attr('href'));
     }
 
 }
