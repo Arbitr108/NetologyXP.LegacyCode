@@ -1,3 +1,6 @@
+function _loadURL(url, container) {
+    loadURL(url + location.search, container);
+}
 function checkURL() {
 
     //get the url by removing the hash
