@@ -5,16 +5,18 @@ function getUrl() {
     //....
     return url;
 }
-function _loadURL(url, container) {
+function _loadURL(url, search, container) {
     "use strict";
     //Here we can provide test logic
     //....
-    loadURL(url + location.search, container);
+    loadURL(url + search, container);
 }
 
-function _updatePage() {
+function _updatePage(hash) {
     "use strict";
-    window.location.hash = $this.attr('href');
+    //Here we can provide test logic
+    //....
+    window.location.hash = hash;
 }
 
 function checkURL() {
@@ -36,7 +38,7 @@ function checkURL() {
         //console.log("page title: " + document.title);
 
         // parse url to jquery
-        _loadURL(url + location.search, container);
+        _loadURL(url, location.search, container);
     } else {
 
         // grab the first URL from nav
