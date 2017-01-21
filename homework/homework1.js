@@ -14,7 +14,7 @@ function _loadURL(url, container) {
 function checkURL() {
 
     //get the url by removing the hash
-    var url = location.hash.replace(/^#/, '');
+    var url = getUrl();
 
     container = $('#content');
     // Do this if url exists (for page refresh, etc...)
