@@ -1,11 +1,7 @@
-function _getUrl() {
-    "use strict";
-    //Here we can generate any url if we need for tests
-    //....
-    var url = location.hash.replace(/^#/, '');
-    //....
-    return url;
-}
+var _getUrl = function () {
+    return location.hash.replace(/^#/, '');
+};
+
 function _loadURL(url, search, container) {
     "use strict";
     //Here we can provide test logic
@@ -20,7 +16,13 @@ function _updateHash(hash) {
     window.location.hash = hash;
 }
 
-function checkURL() {
+function createGetUrl(isTestMode) {
+    return _getUrl;
+}
+
+function checkURL(isTestMode) {
+    isTestMode = isTestMode || false;
+    _getUrl = createGetUrl(isTestMode);
 
     //get the url by removing the hash
     var url = _getUrl();
@@ -50,3 +52,5 @@ function checkURL() {
     }
 
 }
+
+checkURL();
