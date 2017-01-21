@@ -1,5 +1,14 @@
+function getUrl() {
+    "use strict";
+    //Here we can generate any url if we need for tests
+    var url = location.hash.replace(/^#/, '');
+    //....
+    return url;
+}
 function _loadURL(url, container) {
+    "use strict";
     //Here we can provide test logic
+    //....
     loadURL(url + location.search, container);
 }
 function checkURL() {
