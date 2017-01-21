@@ -45,8 +45,7 @@ function checkURL() {
         var $this = $('nav > ul > li:first-child > a[href!="#"]');
 
         //update hash
-        window.location.hash = $this.attr('href');
-
+        _updatePage($this.attr('href'));
     }
 
 }
