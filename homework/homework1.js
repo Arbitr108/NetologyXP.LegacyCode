@@ -17,7 +17,13 @@ function _updateHash(hash) {
 }
 
 function createGetUrl(isTestMode) {
-    return _getUrl;
+    if (isTestMode) {
+        return function () {
+            return "https://google.com/#page1"
+        }
+    } else {
+        return _getUrl;
+    }
 }
 
 function checkURL(isTestMode) {
