@@ -6,10 +6,7 @@ var _loadURL = function (url, search, container) {
     loadURL(url + search, container);
 };
 
-function _updateHash(hash) {
-    "use strict";
-    //Here we can provide test logic
-    //....
+var _updateHash = function (hash) {
     window.location.hash = hash;
 }
 

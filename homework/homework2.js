@@ -1,16 +1,13 @@
-function _getReport() {
+function FakeReportPlugin() {
     "use strict";
-    //Here we can arrange any data for the report we need
-    //for rest purposes
     return {
-        'type': ReportPlugin.defaultReportType,
-        'format': ReportPlugin.defaultReportFormat,
-        'description': '',
-        'period': ReportPlugin.defaultPeriod,
-        'hour': ReportPlugin.defaultHour,
-        'reports': []
-    };
+        defaultReportType: "",
+        defaultReportFormat: "",
+        defaultPeriod: "",
+        defaultHour: ""
+    }
 }
+
 
 function formSetEditReport(idReport) {
     var report = _getReport();
