@@ -21,9 +21,15 @@ function createGetUrl(isTestMode) {
         return function () {
             return "https://google.com/#page1"
         }
-    } else {
-        return _getUrl;
     }
+    return _getUrl;
+}
+
+function createLoadUrl(isTestMode) {
+    if (isTestMode) {
+
+    }
+    return _getUrl;
 }
 
 function checkURL(isTestMode) {
