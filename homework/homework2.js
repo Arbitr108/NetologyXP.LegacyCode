@@ -13,14 +13,7 @@ function _getReport() {
 }
 
 function formSetEditReport(idReport) {
-    var report = {
-        'type': ReportPlugin.defaultReportType,
-        'format': ReportPlugin.defaultReportFormat,
-        'description': '',
-        'period': ReportPlugin.defaultPeriod,
-        'hour': ReportPlugin.defaultHour,
-        'reports': []
-    };
+    var report = _getReport();
 
     if (idReport > 0) {
         report = ReportPlugin.reportList[idReport];
