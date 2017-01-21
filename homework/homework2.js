@@ -9,6 +9,10 @@ function createReportPlugin(isTestMode) {
         return FakeReportPlugin;
     return ReportPlugin;
 }
+function _updateReportParametersFunctions(type, parameters) {
+    updateReportParametersFunctions[type](parameters);
+}
+
 function formSetEditReport(idReport, isTestMode) {
     isTestMode = isTestMode || false;
     var ReportPlugin = createReportPlugin(isTestMode);
@@ -45,8 +49,7 @@ function formSetEditReport(idReport, isTestMode) {
     for (key in report.reports) {
         $('.' + report.type + ' [report-unique-id=' + report.reports[key] + ']').prop('checked', 'checked');
     }
-
-    updateReportParametersFunctions[report.type](report.parameters);
+    _updateReportParametersFunctions(report.type, report.parameters);
 
     $('#report_idreport').val(idReport);
 }
