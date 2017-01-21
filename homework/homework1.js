@@ -8,12 +8,12 @@ var _loadURL = function (url, search, container) {
 
 var _updateHash = function (hash) {
     window.location.hash = hash;
-}
+};
 
 function createGetUrl(isTestMode) {
     if (isTestMode) {
         return function () {
-            return "https://google.com/#page1"
+            return "https://test.com/#test_page1"
         }
     }
     return _getUrl;
@@ -29,6 +29,12 @@ function createLoadUrl(isTestMode) {
 }
 
 function createUpdateHash(isTestMode) {
+    if (isTestMode) {
+        return function (hash) {
+            "use strict";
+            console.log("updateHash test mode");
+        }
+    }
     return _updateHash;
 }
 function checkURL(isTestMode) {
