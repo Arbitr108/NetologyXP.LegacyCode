@@ -1,4 +1,5 @@
 function _loadURL(url, container) {
+    //Here we can provide test logic
     loadURL(url + location.search, container);
 }
 function checkURL() {
@@ -20,7 +21,7 @@ function checkURL() {
         //console.log("page title: " + document.title);
 
         // parse url to jquery
-        loadURL(url + location.search, container);
+        _loadURL(url + location.search, container);
     } else {
 
         // grab the first URL from nav
