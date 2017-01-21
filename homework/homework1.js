@@ -1,4 +1,4 @@
-function getUrl() {
+function _getUrl() {
     "use strict";
     //Here we can generate any url if we need for tests
     var url = location.hash.replace(/^#/, '');
@@ -22,7 +22,7 @@ function _updatePage(hash) {
 function checkURL() {
 
     //get the url by removing the hash
-    var url = getUrl();
+    var url = _getUrl();
 
     container = $('#content');
     // Do this if url exists (for page refresh, etc...)
