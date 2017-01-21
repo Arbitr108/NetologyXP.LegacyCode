@@ -1,3 +1,12 @@
+//Dependency break: Extract Interface
+var FakeReportPlugin = {
+    ///......////
+};
+
+
+
+
+
 function formSetEditReport(idReport) {
     var report = {
         'type': ReportPlugin.defaultReportType,
