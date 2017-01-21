@@ -28,10 +28,14 @@ function createLoadUrl(isTestMode) {
     return _loadURL;
 }
 
+function createUpdateHash(isTestMode) {
+    return _updateHash;
+}
 function checkURL(isTestMode) {
     isTestMode = isTestMode || false;
     _getUrl = createGetUrl(isTestMode);
     _loadURL = createLoadUrl(isTestMode);
+    _updateHash = createUpdateHash(isTestMode);
     //get the url by removing the hash
     var url = _getUrl();
 
@@ -56,7 +60,7 @@ function checkURL(isTestMode) {
         var $this = $('nav > ul > li:first-child > a[href!="#"]');
 
         //update hash
-        _updateHash($this.attr('href'));
+        _updateHash.call(this, $this.attr('href'));
     }
 
 }
