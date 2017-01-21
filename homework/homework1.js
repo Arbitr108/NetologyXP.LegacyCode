@@ -11,6 +11,12 @@ function _loadURL(url, container) {
     //....
     loadURL(url + location.search, container);
 }
+
+function _updatePage() {
+    "use strict";
+    window.location.hash = $this.attr('href');
+}
+
 function checkURL() {
 
     //get the url by removing the hash
