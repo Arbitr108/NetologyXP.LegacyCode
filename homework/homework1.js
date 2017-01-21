@@ -2,12 +2,9 @@ var _getUrl = function () {
     return location.hash.replace(/^#/, '');
 };
 
-function _loadURL(url, search, container) {
-    "use strict";
-    //Here we can provide test logic
-    //....
+var _loadURL = function (url, search, container) {
     loadURL(url + search, container);
-}
+};
 
 function _updateHash(hash) {
     "use strict";
@@ -27,15 +24,17 @@ function createGetUrl(isTestMode) {
 
 function createLoadUrl(isTestMode) {
     if (isTestMode) {
-
+        return function (url, search, container) {
+            console.log("in test mode in loadUrl");
+        }
     }
-    return _getUrl;
+    return _loadURL;
 }
 
 function checkURL(isTestMode) {
     isTestMode = isTestMode || false;
     _getUrl = createGetUrl(isTestMode);
-
+    _loadURL = createLoadUrl(isTestMode);
     //get the url by removing the hash
     var url = _getUrl();
 
@@ -53,7 +52,7 @@ function checkURL(isTestMode) {
         //console.log("page title: " + document.title);
 
         // parse url to jquery
-        _loadURL(url, location.search, container);
+        _loadURL.call(this, url, location.search, container);
     } else {
 
         // grab the first URL from nav
