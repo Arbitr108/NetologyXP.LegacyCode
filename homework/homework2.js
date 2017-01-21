@@ -4,12 +4,14 @@ var FakeReportPlugin = {
 };
 
 
-function createReportPlugin() {
+function createReportPlugin(isTestMode) {
+    if (isTestMode)
+        return FakeReportPlugin;
     return ReportPlugin;
 }
 function formSetEditReport(idReport, isTestMode) {
     isTestMode = isTestMode || false;
-    var ReportPlugin = createReportPlugin();
+    var ReportPlugin = createReportPlugin(isTestMode);
     var report = {
         'type': ReportPlugin.defaultReportType,
         'format': ReportPlugin.defaultReportFormat,
