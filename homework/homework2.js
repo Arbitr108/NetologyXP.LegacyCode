@@ -1,16 +1,13 @@
-function FakeReportPlugin() {
-    "use strict";
-    return {
-        defaultReportType: "",
-        defaultReportFormat: "",
-        defaultPeriod: "",
-        defaultHour: ""
-    }
-}
-
-
 function formSetEditReport(idReport) {
-    var report = _getReport();
+    var report = {
+        'type': ReportPlugin.defaultReportType,
+        'format': ReportPlugin.defaultReportFormat,
+        'description': '',
+        'period': ReportPlugin.defaultPeriod,
+        'hour': ReportPlugin.defaultHour,
+        'reports': []
+    };
+
 
     if (idReport > 0) {
         report = ReportPlugin.reportList[idReport];
